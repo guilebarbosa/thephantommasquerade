@@ -1346,7 +1346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447336, guid: 2e2742beee8e440ab84fa7b4a2d0242b, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6080292, guid: 2e2742beee8e440ab84fa7b4a2d0242b, type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
@@ -3026,7 +3026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 480622, guid: 50ae663cb228c4c63949270c2876e5d4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.42000008
+      value: 6.9000001
       objectReference: {fileID: 0}
     - target: {fileID: 480622, guid: 50ae663cb228c4c63949270c2876e5d4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3147,15 +3147,15 @@ Prefab:
       objectReference: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.16377068
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.16376913
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_LocalScale.z
-      value: .656928658
+      value: 1.11832082
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_MaxSpeed

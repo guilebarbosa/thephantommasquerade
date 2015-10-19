@@ -21,6 +21,10 @@ public class Player : Character
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 originalScale;
 
+	private float jumpDelay = 0.26f;
+	private float jumpTime;
+	private bool jumped;
+
     private void Awake()
     {
         // Setting up references.
@@ -72,6 +76,7 @@ public class Player : Character
 		float moveSpeed = (moveX != 0 ? moveX : moveY);
 
         // If crouching, check to see if the character can stand up
+
         if (!crouch && m_Anim.GetBool("Crouch"))
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
@@ -80,6 +85,19 @@ public class Player : Character
                 crouch = true;
             }
         }
+
+		if (jump) {
+			jumped = true;
+			jumpTime = jumpDelay;
+			m_Anim.SetBool ("Jumping", true);
+		}
+
+		jumpTime -= Time.deltaTime;
+
+		if (jumpTime <= 0 && jumped) {
+			m_Anim.SetBool("Jumping", false);
+			jumped = false;
+		}
 
         // Set whether or not the character is crouching in the animator
         m_Anim.SetBool("Crouch", crouch);
@@ -101,7 +119,7 @@ public class Player : Character
 			m_Anim.SetFloat("Speed", Mathf.Abs(moveSpeed));
             
 			// Move the character
-            m_Rigidbody2D.velocity = new Vector2(moveX * m_MaxSpeed, moveY);
+            m_Rigidbody2D.velocity = new Vector2(moveX * m_MaxSpeed, moveY * m_MaxSpeed);
 
 
             // If the input is moving the player right and the player is facing left...
@@ -121,14 +139,12 @@ public class Player : Character
 				SetScale();
 			}
         }
-
-		m_Anim.SetBool ("Jumping", jump);
     }
 
 	private void SetScale() {
-		float scaleFactor = transform.position.y / 4;
-		var x = originalScale.x + scaleFactor * -1;
-		var y = originalScale.y + scaleFactor * -1;
+		float scaleFactor = 100 - transform.position.y * 10;
+		var x = originalScale.x * scaleFactor / 100;
+		var y = originalScale.y * scaleFactor / 100;
 
 		x = m_FacingRight ? x : x * -1;
 
