@@ -25,6 +25,10 @@ public class Player : Character
 	private float jumpTime;
 	private bool jumped;
 
+	private float attackDelay = 0.3f;
+	private float attackTime;
+	private bool attacked;
+
     private void Awake()
     {
         // Setting up references.
@@ -69,6 +73,22 @@ public class Player : Character
         // Set the vertical animation
         m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
     }
+
+	public void Attack()
+	{
+		if (!attacked) {
+			attackTime = attackDelay;
+			m_Anim.SetBool ("Rolling", true);
+			attacked = true;
+		}
+
+		attackTime -= Time.deltaTime;
+
+		if (attackTime <= 0 && !attacked) {
+			attacked = false;
+			m_Anim.SetBool ("Rolling", false);
+		}
+	}
 
 
     public void Move(float moveX, float moveY, bool crouch, bool jump)

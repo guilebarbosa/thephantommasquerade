@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour
 {
     private Player m_Character;
     private bool m_Jump;
+	private bool m_Attack;
 
 
     private void Awake()
@@ -22,6 +23,8 @@ public class PlayerControls : MonoBehaviour
             // Read the jump input in Update so button presses aren't missed.
             m_Jump = Input.GetKey(KeyCode.Space);
         }
+
+		m_Attack = Input.GetMouseButtonDown(0);
     }
 
 
@@ -37,5 +40,9 @@ public class PlayerControls : MonoBehaviour
         // Pass all parameters to the character control script.
         m_Character.Move(h, v, crouch, m_Jump);
         m_Jump = false;
+		 
+		if (m_Attack) {
+			m_Character.Attack ();
+		}
     }
 }
