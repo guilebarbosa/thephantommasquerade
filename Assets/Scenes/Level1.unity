@@ -1376,6 +1376,10 @@ Prefab:
       propertyPath: m_Name
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 135550, guid: 2e2742beee8e440ab84fa7b4a2d0242b, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e2742beee8e440ab84fa7b4a2d0242b, type: 2}
   m_IsPrefabParent: 0

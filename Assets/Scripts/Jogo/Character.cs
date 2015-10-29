@@ -9,7 +9,8 @@ public class Character : MonoBehaviour {
 		}
 
 		set {
-			if (value > 0 && value > 10) {
+			Debug.Log (value);
+			if (value > 0 && value < 11) {
 				health = value;
 			} 
 		}
@@ -22,9 +23,12 @@ public class Character : MonoBehaviour {
 			health = 0;
 			Die();
 		}
+
+		Debug.Log ("Hit!");
+		Debug.Log (health);
 	}
 
-	public void Die() {
+	virtual public void Die() {
 		Debug.Log("Character is dead");
 	}
 }

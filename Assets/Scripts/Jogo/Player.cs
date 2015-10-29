@@ -38,8 +38,7 @@ public class Player : Character
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		originalScale = transform.localScale;
 
-		Health = 10;
-
+		this.Health = 10;
 		SetScale ();
     }
 
@@ -74,26 +73,38 @@ public class Player : Character
         m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
     }
 
-	public void Attack()
+	private void OnCollisionEnter2D(Collision2D collision) {
+		Debug.Log (collision);
+		if (collision.gameObject.tag == "Enemy") {
+			Bleed(1);
+		}
+	}
+
+	private void Attack()
 	{
-		if (!attacked) {
+		if (attacked) {
 			attackTime = attackDelay;
 			m_Anim.SetBool ("Rolling", true);
-			attacked = true;
+			attacked = false;
 		}
 
 		attackTime -= Time.deltaTime;
 
-		if (attackTime <= 0 && !attacked) {
-			attacked = false;
+		if (attackTime <= 0) {
 			m_Anim.SetBool ("Rolling", false);
 		}
 	}
 
+	override public void Die() {
+		m_Anim.SetBool ("Dead", true);
+	}
 
-    public void Move(float moveX, float moveY, bool crouch, bool jump)
+    public void Move(float moveX, float moveY, bool crouch, bool jump, bool attack)
     {
 		float moveSpeed = (moveX != 0 ? moveX : moveY);
+
+		attacked = attack;
+		Attack ();
 
         // If crouching, check to see if the character can stand up
 

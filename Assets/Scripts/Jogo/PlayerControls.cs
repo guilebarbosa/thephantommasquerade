@@ -24,7 +24,7 @@ public class PlayerControls : MonoBehaviour
             m_Jump = Input.GetKey(KeyCode.Space);
         }
 
-		m_Attack = Input.GetMouseButtonDown(0);
+		m_Attack = Input.GetButtonDown("Fire1");
     }
 
 
@@ -38,11 +38,7 @@ public class PlayerControls : MonoBehaviour
 //		float v = Input.GetAxisRaw ("Vertical");
 
         // Pass all parameters to the character control script.
-        m_Character.Move(h, v, crouch, m_Jump);
-        m_Jump = false;
-		 
-		if (m_Attack) {
-			m_Character.Attack ();
-		}
+        m_Character.Move(h, v, crouch, m_Jump, m_Attack);
+        m_Jump = false;		 
     }
 }
