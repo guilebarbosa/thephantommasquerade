@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Character : MonoBehaviour {
 	private int health;
+	private float time = 5f;
+
+	public Slider healthSlider;
+
 	public int Health {
 		get {
 			return health;
@@ -10,22 +15,19 @@ public class Character : MonoBehaviour {
 
 		set {
 			Debug.Log (value);
-			if (value > 0 && value < 11) {
-				health = value;
-			} 
+			health = value;
 		}
 	}
 
 	public void Bleed(int amount) {
 		health -= amount;
 
+		healthSlider.value = health/10f; // Vida atual/Vida maxima
+
 		if (health <= 0) {
 			health = 0;
 			Die();
 		}
-
-		Debug.Log ("Hit!");
-		Debug.Log (health);
 	}
 
 	virtual public void Die() {
