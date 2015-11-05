@@ -84,14 +84,14 @@ public class Player : Character
 	{
 		if (attacked) {
 			attackTime = attackDelay;
-			m_Anim.SetBool ("Rolling", true);
+			m_Anim.SetBool ("Attacking", true);
 			attacked = false;
 		}
 
 		attackTime -= Time.deltaTime;
 
 		if (attackTime <= 0) {
-			m_Anim.SetBool ("Rolling", false);
+			m_Anim.SetBool ("Attacking", false);
 		}
 	}
 
