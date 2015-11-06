@@ -46,7 +46,7 @@ public class Character : MonoBehaviour{
             health = 0;
             Die();
         }
-        damaged = false;
+        damaged = false; 
     }
 
 }
