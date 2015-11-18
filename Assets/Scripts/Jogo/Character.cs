@@ -1,52 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-public class Character : MonoBehaviour{
-    private int health;
-    private float time = 5f;
-    private float flashSpeed = 3f;
-    private float lifeBarSpeed = 10f;
-    private Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+public class Character : MonoBehaviour {
+	private int health;
+	private float time = 5f;
 
-    public Slider healthSlider;
-    public Image damageImage;
+	public Slider healthSlider;
 
-    bool damaged;
+	public int Health {
+		get {
+			return health;
+		}
 
-    public int Health{
-        get { return health; }
+		set {
+			Debug.Log (value);
+			health = value;
+		}
+	}
 
-        set{
-            Debug.Log(value);
-            health = value;
-        }
-    }
+	public void Bleed(int amount) {
+		health -= amount;
 
-    public void Bleed(int amount){
-        health -= amount;
+		healthSlider.value = health/10f; // Vida atual/Vida maxima
 
-        damaged = true;
-    }
+		if (health <= 0) {
+			health = 0;
+			Die();
+		}
+	}
 
-    virtual public void Die(){
-        Debug.Log("Character is dead");
-    }
-
-    void Update(){
-        if (damaged){
-            damageImage.color = flashColour;
-        }
-        else{
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        }
-
-        healthSlider.value = Mathf.Lerp(healthSlider.value, health, lifeBarSpeed * Time.deltaTime);
-
-        if (health <= 0){
-            health = 0;
-            Die();
-        }
-        damaged = false;
-    }
-
+	virtual public void Die() {
+		Debug.Log("Character is dead");
+	}
 }
