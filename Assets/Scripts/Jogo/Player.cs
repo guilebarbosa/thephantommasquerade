@@ -107,14 +107,14 @@ public class Player : Character
 
         // If crouching, check to see if the character can stand up
 
-        if (!crouch && m_Anim.GetBool("Crouch"))
-        {
-            // If the character has a ceiling preventing them from standing up, keep them crouching
-            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-            {
-                crouch = true;
-            }
-        }
+        //if (!crouch && m_Anim.GetBool("Crouch"))
+        //{
+        //    // If the character has a ceiling preventing them from standing up, keep them crouching
+        //    if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+        //    {
+        //        crouch = true;
+        //    }
+        //}
 
 		if (jump) {
 			jumped = true;
@@ -130,7 +130,7 @@ public class Player : Character
 		}
 
         // Set whether or not the character is crouching in the animator
-        m_Anim.SetBool("Crouch", crouch);
+        //m_Anim.SetBool("Crouch", crouch);
 
         //only control the player if grounded or airControl is turned on
         if (m_AirControl)
