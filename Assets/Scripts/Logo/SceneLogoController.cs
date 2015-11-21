@@ -3,16 +3,16 @@ using System.Collections;
 
 public class SceneLogoController:Util{
 	private GameObject canvas;
-
+	
 	public float loadNavBarDelay;
+	public float timeAnimationNavBar;
 	public GameObject logo;
 	public GameObject menu;
 
 	bool menuIsLoad = false;
 
 	void Start(){
-
-		StartCoroutine (LoadMenu ());
+		StartCoroutine (LoadMenu());
 	}
 
 	private IEnumerator LoadMenu(){
@@ -23,22 +23,25 @@ public class SceneLogoController:Util{
 
 	}
 	void Update(){
+		//Informaçoes do canvas
+		canvas = GameObject.FindGameObjectWithTag("NavCanvas");
+
+
 		if (menuIsLoad) {
 			// Animate logo
-			Vector3 currenPosition = logo.GetComponent<RectTransform> ().localPosition;
-			logo.GetComponent<RectTransform> ().localPosition = Vector3.Lerp (currenPosition, new Vector3 (-225f, 0, 0), 2f * Time.deltaTime);
+			Vector3 logoCurrenPosition = logo.GetComponent<RectTransform>().localPosition;
+			logo.GetComponent<RectTransform>().localPosition = Vector3.Lerp(logoCurrenPosition, new Vector3(-225f, 0f, 0f), timeAnimationNavBar * Time.deltaTime);
 
 			//Animate Menu
+			RectTransform menuRect = menu.GetComponent<RectTransform>();
+			Vector3 menuCurrenPosition = menuRect.localPosition;
+			float positionShowMenu = canvas.GetComponent<RectTransform>().rect.width/2 - menu.GetComponent<RectTransform>().rect.width / 2; 
 
+			menuRect.localPosition = Vector3.Lerp(menuCurrenPosition, new Vector3(positionShowMenu, 0f, 0f), 2f * Time.deltaTime);
 		}else {
 			//Esconder Menu
-			canvas = GameObject.FindGameObjectWithTag("NavCanvas");
-			float positionHideMenu = canvas.GetComponent<RectTransform>().rect.width + menu.GetComponent<RectTransform>().rect.width / 2; 
-
-			Debug.Log (canvas.GetComponent<RectTransform>().rect.width);
-
+			float positionHideMenu = canvas.GetComponent<RectTransform>().rect.width/2 + menu.GetComponent<RectTransform>().rect.width / 2; 
 			menu.GetComponent<RectTransform>().localPosition = new Vector3(positionHideMenu,0,0);
-
 		}
 	}
 

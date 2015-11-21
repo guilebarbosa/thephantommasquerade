@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Video
+  - Fader
+  - NavCanvas
   layers:
   - Default
   - TransparentFX
