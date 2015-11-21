@@ -73,7 +73,6 @@ public class Player : Character
     }
 
 	private void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log (collision);
 		if (collision.gameObject.tag == "Enemy") {
 			Bleed(1);
 		}
