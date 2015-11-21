@@ -35,7 +35,7 @@ public class SceneLogoController:Util{
 			//Animate Menu
 			RectTransform menuRect = menu.GetComponent<RectTransform>();
 			Vector3 menuCurrenPosition = menuRect.localPosition;
-			float positionShowMenu = canvas.GetComponent<RectTransform>().rect.width/2 - menu.GetComponent<RectTransform>().rect.width / 2; 
+			float positionShowMenu = canvas.GetComponent<RectTransform>().rect.width/2 - menu.GetComponent<RectTransform>().rect.width/2; 
 
 			menuRect.localPosition = Vector3.Lerp(menuCurrenPosition, new Vector3(positionShowMenu, 0f, 0f), 2f * Time.deltaTime);
 		}else {
