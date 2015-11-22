@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d5b9f6cb49c8042b85e249c6a3a492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToShowLabel: 5
+  timeToShowLabel: 1.5
   timeToFadeInLabel: 1
 --- !u!114 &11428360
 MonoBehaviour:
@@ -133,11 +133,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 148.270004, y: -67.4499969}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 81.9000015, y: 220.100006}
   m_SizeDelta: {x: 103.73333, y: 33.5999985}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0, y: .5}
 --- !u!225 &22524668
 CanvasGroup:
   m_ObjectHideFlags: 1
