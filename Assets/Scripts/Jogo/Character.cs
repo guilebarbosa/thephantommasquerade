@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour{
 	private int health;
-	private float time = 5f;
 	private float flashSpeed = 3f;
 	private float lifeBarSpeed = 10f;
 	private Color flashColour = new Color(1f, 0f, 0f, 0.1f);

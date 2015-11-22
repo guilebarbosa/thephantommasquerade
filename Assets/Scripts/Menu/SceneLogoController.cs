@@ -30,17 +30,17 @@ public class SceneLogoController:Util{
 		if (menuIsLoad) {
 			// Animate logo
 			Vector3 logoCurrenPosition = logo.GetComponent<RectTransform>().localPosition;
-			logo.GetComponent<RectTransform>().localPosition = Vector3.Lerp(logoCurrenPosition, new Vector3(-225f, 0f, 0f), timeAnimationNavBar * Time.deltaTime);
+			logo.GetComponent<RectTransform>().localPosition = Vector3.Lerp(logoCurrenPosition, new Vector3(-canvas.GetComponent<RectTransform>().rect.width/4.76f, 0f, 0f), timeAnimationNavBar * Time.deltaTime);
 
 			//Animate Menu
 			RectTransform menuRect = menu.GetComponent<RectTransform>();
 			Vector3 menuCurrenPosition = menuRect.localPosition;
-			float positionShowMenu = canvas.GetComponent<RectTransform>().rect.width/2 - menu.GetComponent<RectTransform>().rect.width/2; 
+			float positionShowMenu = menu.GetComponent<RectTransform>().rect.width/2;
 
 			menuRect.localPosition = Vector3.Lerp(menuCurrenPosition, new Vector3(positionShowMenu, 0f, 0f), 2f * Time.deltaTime);
 		}else {
 			//Esconder Menu
-			float positionHideMenu = canvas.GetComponent<RectTransform>().rect.width/2 + menu.GetComponent<RectTransform>().rect.width / 2; 
+			float positionHideMenu = canvas.GetComponent<RectTransform>().rect.width + menu.GetComponent<RectTransform>().rect.width / 2; 
 			menu.GetComponent<RectTransform>().localPosition = new Vector3(positionHideMenu,0,0);
 		}
 	}
