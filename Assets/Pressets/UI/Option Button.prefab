@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46af5a6d064f6c458b0243a37ca9faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: Options
 --- !u!114 &11427802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,7 +72,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11490216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11405016}
+        m_MethodName: changeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11489182
@@ -86,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d5b9f6cb49c8042b85e249c6a3a492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToShowLabel: 4.5
+  timeToShowLabel: 1
   timeToFadeInLabel: 1
 --- !u!114 &11490216
 MonoBehaviour:
@@ -133,11 +144,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 181.800003, y: -20.2000008}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 81.9000015, y: 267.399994}
   m_SizeDelta: {x: 170.666672, y: 44.7999992}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0, y: .5}
 --- !u!225 &22528120
 CanvasGroup:
   m_ObjectHideFlags: 1
