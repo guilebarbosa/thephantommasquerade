@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46af5a6d064f6c458b0243a37ca9faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Character
+  sceneName: Level1
 --- !u!114 &11448912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,11 +144,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 213.100006, y: 49.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 81.9000015, y: 337.600006}
   m_SizeDelta: {x: 233.333328, y: 79.1999969}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0, y: .5}
 --- !u!225 &22512624
 CanvasGroup:
   m_ObjectHideFlags: 1
