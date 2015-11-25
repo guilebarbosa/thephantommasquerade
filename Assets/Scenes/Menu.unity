@@ -321,9 +321,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 195642, guid: 9a2bf7ff927251344b68513e7c9bc899, type: 2}
-      propertyPath: m_Name
-      value: Start Button
+    - target: {fileID: 22512624, guid: 9a2bf7ff927251344b68513e7c9bc899, type: 2}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448912, guid: 9a2bf7ff927251344b68513e7c9bc899, type: 2}
+      propertyPath: timeToShowLabel
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2bf7ff927251344b68513e7c9bc899, type: 2}
