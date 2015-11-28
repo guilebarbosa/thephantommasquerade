@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class ChangeScene : Util {
+﻿public class ChangeScene : Util {
 	public string sceneName;
 
 	public void changeScene(){
