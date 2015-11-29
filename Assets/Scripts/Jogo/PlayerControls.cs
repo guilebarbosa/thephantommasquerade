@@ -1,44 +1,30 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-[RequireComponent(typeof (Player))]
+[RequireComponent(typeof(Player))]
 public class PlayerControls : MonoBehaviour
 {
-    private Player m_Character;
-    private bool m_Jump;
-	private bool m_Attack;
-
+    private Player  m_Character;
+    private float   moveHorizontal;
+    private float   moveVertical;
 
     private void Awake()
     {
         m_Character = GetComponent<Player>();
     }
-
-
-    private void Update()
-    {
-        if (!m_Jump)
-        {
-            // Read the jump input in Update so button presses aren't missed.
-            m_Jump = Input.GetKey(KeyCode.Space);
-        }
-
-		m_Attack = Input.GetButtonDown("Fire1");
-    }
-
-
+    
     private void FixedUpdate()
     {
-        // Read the inputs.
-        bool crouch = Input.GetKey(KeyCode.LeftControl);
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-		float v = CrossPlatformInputManager.GetAxis("Vertical");
-//		float h = Input.GetAxisRaw ("Horizontal");
-//		float v = Input.GetAxisRaw ("Vertical");
-
-        // Pass all parameters to the character control script.
-        m_Character.Move(h, v, crouch, m_Jump, m_Attack);
-        m_Jump = false;		 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            // Call character atack
+            m_Character.HandleAttack();
+        }
+        else {
+            // Movimentation
+            moveHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+            moveVertical = CrossPlatformInputManager.GetAxis("Vertical");
+            m_Character.Move(moveHorizontal, moveVertical);
+        }
     }
 }
