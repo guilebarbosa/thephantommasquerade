@@ -9,6 +9,7 @@ TagManager:
   - Fader
   - NavCanvas
   - HealthSlider
+  - punchENEMY
   layers:
   - Default
   - TransparentFX

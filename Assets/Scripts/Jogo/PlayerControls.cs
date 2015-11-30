@@ -14,21 +14,39 @@ public class PlayerControls : MonoBehaviour
 
     public Slider       healthSlider;       // Object Slider
     public string       gameOverSceneName;
+    private GameObject childTrigger;
+    private Collider2D coliderAtaque;
+    private bool atacando = false;
+    private float atackCD = 0.3f;
+    private float atackTimer = 0f;
 
     private void Awake()
     {
         m_Character = GetComponent<Player>();
         m_Animator = GetComponent<Animator>();
+        childTrigger = transform.FindChild("AtackTrigger").gameObject;
+        coliderAtaque = childTrigger.GetComponent<Collider2D>();
+        coliderAtaque.enabled = false;
     }
 
     private void FixedUpdate()
     {
+        m_Animator.SetBool("Attacking", atacando);
         if (!die)
         {
             // Attack
             if (Input.GetButtonDown("Fire1"))
             {
-                m_Character.HandleAttack();
+
+                coliderAtaque.enabled = true;
+                atackTimer = atackCD;
+                atacando = true;
+              
+            }
+            else
+            {
+                atacando = false;
+                coliderAtaque.enabled = false;
             }
 
             // Movimentation

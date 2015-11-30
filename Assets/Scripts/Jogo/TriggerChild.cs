@@ -33,12 +33,12 @@ public class TriggerChild : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col ) {
 		if(col.gameObject == player){
 			
-			if (Vector2.Distance(this.transform.position,player.transform.position)>3f){
+			if (Vector2.Distance(this.transform.position,player.transform.position)>1.5f){
 				state=true;
                 Debug.Log("state true");
             }
           
-            if (Vector2.Distance(this.transform.position, player.transform.position) <3f) {
+            if (Vector2.Distance(this.transform.position, player.transform.position) <1.5f) {
                 Debug.Log("state false");
 				state=false;
 			}

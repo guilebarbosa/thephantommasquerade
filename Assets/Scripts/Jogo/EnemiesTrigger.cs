@@ -2,23 +2,18 @@
 using System.Collections;
 
 public class EnemiesTrigger : MonoBehaviour {
-	public GameObject SpawnPoint;
-	private bool IsActivated = false;
+    public GameObject EnemyPrefab;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-		if (!IsActivated) {
-			IsActivated = true;
-			SpawnPoint.GetComponent<EnemiesSpawnPointController>().Spawn();
-		}
-	}
 
-	// Update is called once per frame
-	void Update () {
-	
+    
+
+	void OnTriggerEnter2D (Collider2D col) {
+		
+            Instantiate(EnemyPrefab, transform.position + (transform.right * 10), Quaternion.identity);
+            Debug.Log("Enemies spawned");
+        Destroy(this.gameObject);
+        
 	}
+    
 }

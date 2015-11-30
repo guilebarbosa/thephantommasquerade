@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private bool m_FacingRight = true;      // For determining which way the player is currently facing.
     private Vector3 originalScale;
     
+    
     private void Awake()
     {
         // Setting up references.
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
         m_Anim        = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         originalScale = transform.localScale;
-       
+        
         SetScale();
     }
 
@@ -66,9 +67,7 @@ public class Player : MonoBehaviour
         m_Anim.SetTrigger("Hit");
     }
 
-    public void HandleAttack(){
-        m_Anim.SetTrigger("Attacking");
-    }
+    
 
     public void Move(float moveX, float moveY){
         float moveSpeed = (moveX != 0 ? moveX : moveY);

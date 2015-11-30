@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
     private Rigidbody2D m_Rigidbody2D;      // Reference to the player Rigidbody component.
     private bool m_FacingRight = true;      // For determining which way the player is currently facing.
     private Vector3 originalScale;
+  
 
     private void Awake()
     {
@@ -31,8 +32,7 @@ public class Enemy : MonoBehaviour {
         m_GroundCheck = transform.Find("GroundCheck");
         m_Anim = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        originalScale = transform.localScale;
-
+        originalScale = transform.localScale;        
         SetScale();
     }
     private void FixedUpdate()

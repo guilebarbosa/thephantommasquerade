@@ -11,7 +11,7 @@ using UnityEngine.UI;
 		private Enemy m_Character;        // Script Enemy.cs
         private Animator m_Animator;         // Componente Animator    
         private bool die;                // True -> die; False -> Live 
-
+        private int currentHealth = 2;
 
 
         void Start () 
@@ -42,7 +42,7 @@ using UnityEngine.UI;
                          m_Character.Move(0f, 0f);
                          if (shortcut.isPlayerOnSight)
                             {
-                                StartCoroutine("Attack", 1f);
+                               StartCoroutine("Attack", 1f);
                             }
                         }
                 ataque = true;
@@ -65,9 +65,15 @@ using UnityEngine.UI;
         ataque = false; 
     }
 
-    private void  takingHITS()
+    private void  takingHITS(int dmg)
     {
+        Debug.Log("tomando porrada");
+        currentHealth -= dmg;
         m_Character.HandleHit();
+        if (currentHealth < 1)
+        {
+            die = true;
+        }
     }
     
 
