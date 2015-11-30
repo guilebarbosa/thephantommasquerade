@@ -1,21 +1,17 @@
 fileFormatVersion: 2
-guid: 3b1c04aebead141a7a45bea3bc2a3f06
-timeCreated: 1448595846
+guid: eb5b9aa028fd9a945b6d7ca8c3f44b6b
+timeCreated: 1448844100
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: woman-walk-2_0
-    21300002: woman-walk-2_1
-    21300004: woman-walk-2_2
-    21300006: woman-walk-2_3
-    21300008: woman-walk-2_4
-    21300010: woman-walk-2_5
-    21300012: woman-walk-2_6
-    21300014: woman-walk-2_7
-    21300016: woman-walk-2_8
-    21300018: woman-walk-2_9
-    21300020: woman-walk-2_10
-    21300022: woman-walk-2_11
+    21300000: woman-idle_0
+    21300002: woman-idle_1
+    21300004: woman-idle_2
+    21300006: woman-idle_3
+    21300008: woman-idle_4
+    21300010: woman-idle_5
+    21300012: woman-idle_6
+    21300014: woman-idle_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,8 +34,8 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 4096
+  textureFormat: -3
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -49,6 +45,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -61,121 +58,81 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: woman-walk-2_0
+    - name: woman-idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_1
+    - name: woman-idle_1
       rect:
         serializedVersion: 2
         x: 600
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_2
+    - name: woman-idle_2
       rect:
         serializedVersion: 2
         x: 1200
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_3
+    - name: woman-idle_3
       rect:
         serializedVersion: 2
         x: 1800
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_4
+    - name: woman-idle_4
       rect:
         serializedVersion: 2
         x: 2400
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_5
+    - name: woman-idle_5
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1328
+        y: 720
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_6
+    - name: woman-idle_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 608
+        y: 0
         width: 600
         height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_7
+    - name: woman-idle_7
       rect:
         serializedVersion: 2
         x: 600
-        y: 608
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_8
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 608
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_9
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 608
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_10
-      rect:
-        serializedVersion: 2
-        x: 2400
-        y: 608
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: woman-walk-2_11
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 608
+        y: 0
         width: 600
         height: 720
       alignment: 0
