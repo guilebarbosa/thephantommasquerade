@@ -6,13 +6,13 @@ using UnityStandardAssets.CrossPlatformInput;
 [RequireComponent(typeof(Player))]
 public class PlayerControls : MonoBehaviour
 {
-    private Player      m_Character;
-    private Animator    m_Animator;
-    private int         health = 10;
-    private float       lifeBarSpeed = 10f;
+    private Player      m_Character;        // Script Player.cs
+    private Animator    m_Animator;         // Componente Animator
+    private int         health = 10;        // Character Heath max
+    private float       lifeBarSpeed = 10f; // Speed animator lifeBar
+    private bool        die;                // True -> die; False -> Live 
 
-    public bool         die;
-    public Slider       healthSlider;
+    public Slider       healthSlider;       // Object Slider
     public string       gameOverSceneName;
 
     private void Awake()
