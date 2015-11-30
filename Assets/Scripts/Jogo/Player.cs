@@ -1,26 +1,28 @@
-using System;
 using UnityEngine;
 
-public class Player : Character
+public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float m_MaxSpeed = 10f;       // The fastest the player can travel in the x axis.
+    private float m_MaxSpeed = 10f;         // The fastest the player can travel in the x axis.
 
     [SerializeField]
-    private LayerMask m_WhatIsGround;         // A mask determining what is ground to the character
+    private LayerMask m_LimitTop;           // A mask determining what is peak to the character
 
     [SerializeField]
-    private LayerMask m_WhatIsMaxHeight;      // A mask determining what is peak to the character
+    private LayerMask m_LimitBottom;        // A mask determining what is ground to the character
 
-    private Transform m_GroundCheck;          // A position marking where to check if the player is grounded.
-    const float k_GroundedRadius = .3f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;             // Whether or not the player is grounded.
-    private bool m_AtMaxHeight;			// Whether or not the player has hit the ceiling;
-    const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
+    [SerializeField]
+    private LayerMask m_LimitX;             // A mask determining what is left and right limit to the character
 
-    private Animator m_Anim;                 // Reference to the player animator component.
-    private Rigidbody2D m_Rigidbody2D;          // Reference to the player Rigidbody component.
-    private bool m_FacingRight = true;   // For determining which way the player is currently facing.
+    private Transform m_GroundCheck;        // A position marking where to check if the player is grounded.
+    const float k_GroundedRadius = .3f;     // Radius of the overlap circle to determine if grounded
+    private bool m_Grounded;                // Whether or not the player is grounded.
+    private bool m_AtMaxHeight;			    // Whether or not the player has hit the ceiling;
+    const float k_CeilingRadius = .01f;     // Radius of the overlap circle to determine if the player can stand up
+
+    private Animator m_Anim;                // Reference to the player animator component.
+    private Rigidbody2D m_Rigidbody2D;      // Reference to the player Rigidbody component.
+    private bool m_FacingRight = true;      // For determining which way the player is currently facing.
     private Vector3 originalScale;
     
     private void Awake()
@@ -30,8 +32,7 @@ public class Player : Character
         m_Anim        = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         originalScale = transform.localScale;
-        Health        = 10;
-
+       
         SetScale();
     }
 
@@ -43,7 +44,7 @@ public class Player : Character
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] groundCollliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        Collider2D[] groundCollliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_LimitBottom);
         for (int i = 0; i < groundCollliders.Length; i++){
             if (groundCollliders[i].gameObject != gameObject)
             {
@@ -51,32 +52,18 @@ public class Player : Character
             }
         }
 
-        Collider2D[] peakColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsMaxHeight);
+        Collider2D[] peakColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_LimitTop);
         for (int i = 0; i < peakColliders.Length; i++){
             if (peakColliders[i].gameObject != gameObject)
             {
                 m_AtMaxHeight = true;
             }
         }
-
-        if (die){
-            HandleDie();
-        }
+        
     }
-
-    private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "Enemy"){
-            Bleed(1);
-            HandleHit();
-        }
-    }
-
+    
     public void HandleHit(){
         m_Anim.SetTrigger("Hit");
-    }
-
-    public void HandleDie(){
-        m_Anim.SetTrigger("Dead");
     }
 
     public void HandleAttack(){
@@ -111,7 +98,7 @@ public class Player : Character
     }
 
     private void SetScale(){
-        float scaleFactor = 100 - transform.position.y * 10;
+        float scaleFactor = 100 - transform.position.y * 7;
         var x = originalScale.x * scaleFactor / 100;
         var y = originalScale.y * scaleFactor / 100;
 

@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadNavBarDelay: 3
-  timeAnimationNavBar: 1
+  timeAnimationNavBar: 2
   logo: {fileID: 2007536970}
   menu: {fileID: 1959817215}
 --- !u!1 &1995116459

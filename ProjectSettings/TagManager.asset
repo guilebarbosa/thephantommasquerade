@@ -8,6 +8,7 @@ TagManager:
   - Video
   - Fader
   - NavCanvas
+  - HealthSlider
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - 
   - 
   - Ignore
-  - Ground
-  - Peak
-  - 
+  - TopLimit
+  - BottomLimit
+  - XLimit
   - 
   - 
   - 
