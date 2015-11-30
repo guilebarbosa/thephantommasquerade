@@ -9,7 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 447336}
   - 212: {fileID: 21296674}
-  - 60: {fileID: 6080292}
+  - 61: {fileID: 6163568}
+  - 114: {fileID: 11402352}
   m_Layer: 0
   m_Name: rock
   m_TagString: Untagged
@@ -24,38 +25,36 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.11999989, y: 1.10000002, z: 0}
+  m_LocalPosition: {x: -14.3999996, y: -3.41000009, z: -1.39999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6080292
-PolygonCollider2D:
+--- !u!61 &6163568
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135550}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: .559735298, y: .0218430758}
-      - {x: .555524826, y: .103421569}
-      - {x: .430260181, y: .216578364}
-      - {x: .133946419, y: .23340714}
-      - {x: -.227107525, y: .2249856}
-      - {x: -.584999979, y: .194999993}
-      - {x: -.625, y: .144999996}
-      - {x: -.591313362, y: .00499999523}
-      - {x: -.420779705, y: -.115529299}
-      - {x: -.28289175, y: -.215524554}
-      - {x: -.108686447, y: -.267103016}
-      - {x: .0307893753, y: -.279735386}
-      - {x: .262367725, y: -.197103024}
-      - {x: .528681278, y: -.0265784264}
+  serializedVersion: 2
+  m_Size: {x: 1.26999998, y: .930000007}
+--- !u!114 &11402352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597a87a775a5e42efae2865be9f6c223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyPrefab: {fileID: 160294, guid: 4614ae1d6de51a04cb3eb1720e2fa1d3, type: 2}
 --- !u!212 &21296674
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -74,7 +73,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}

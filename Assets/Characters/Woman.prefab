@@ -24,6 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460684}
   - 61: {fileID: 6102772}
+  - 114: {fileID: 11491844}
   m_Layer: 0
   m_Name: AtackTrigger
   m_TagString: Untagged
@@ -197,6 +198,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
   gameOverSceneName: GameOver
+--- !u!114 &11491844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f012bc577e3af46b0980e5dd8844c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
 --- !u!212 &21249956
 SpriteRenderer:
   m_ObjectHideFlags: 1
