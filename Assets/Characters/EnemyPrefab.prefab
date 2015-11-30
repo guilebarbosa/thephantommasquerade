@@ -15,6 +15,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &129020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 477114}
+  - 61: {fileID: 6180736}
+  - 114: {fileID: 11437084}
+  m_Layer: 0
+  m_Name: AttackTriggerE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &160294
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,8 +107,21 @@ Transform:
   m_Children:
   - {fileID: 412552}
   - {fileID: 403270}
+  - {fileID: 477114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &477114
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .75999999, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 441166}
+  m_RootOrder: 2
 --- !u!50 &5009556
 Rigidbody2D:
   serializedVersion: 2
@@ -147,6 +177,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: .159999996}
   serializedVersion: 2
   m_Size: {x: .400000006, y: 2.0999999}
+--- !u!61 &6180736
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129020}
+  m_Enabled: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: 1}
 --- !u!95 &9503716
 Animator:
   serializedVersion: 3
@@ -178,6 +221,7 @@ MonoBehaviour:
   ataque: 0
   moveDirection: {x: 0, y: 0}
   shortcut: {fileID: 0}
+  childTrigger: {fileID: 129020}
 --- !u!114 &11422198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +236,18 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0}
   state: 0
   isPlayerOnSight: 0
+--- !u!114 &11437084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c0397bed4269746a496d48d3a7502e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
 --- !u!114 &11477958
 MonoBehaviour:
   m_ObjectHideFlags: 1

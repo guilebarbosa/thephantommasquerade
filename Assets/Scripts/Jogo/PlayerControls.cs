@@ -56,7 +56,7 @@ public class PlayerControls : MonoBehaviour
             }
 
             // Health Controller
-            ChangeHelthStats();
+            ChangeHealthStats();
         }
         else
         {
@@ -65,16 +65,14 @@ public class PlayerControls : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void  takingHITS(int dmg)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health--;
-            m_Character.HandleHit();
-        }
+        Debug.Log("tomando porrada");
+        health -= dmg;   
+        m_Character.HandleHit();        
     }
 
-    private void ChangeHelthStats()
+    private void ChangeHealthStats()
     {
         healthSlider.value = Mathf.Lerp(healthSlider.value, health, lifeBarSpeed * Time.deltaTime);
 

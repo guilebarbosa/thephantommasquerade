@@ -12,12 +12,19 @@ using UnityEngine.UI;
         private Animator m_Animator;         // Componente Animator    
         private bool die;                // True -> die; False -> Live 
         private int currentHealth = 2;
+        public GameObject childTrigger;
+        private Collider2D coliderAtaque;
+        private bool atacando = false;
+        private float atackCD = 0.3f;
+        private float atackTimer = 0f;
 
 
-        void Start () 
+    void Start () 
 		{
-			shortcut = gameObject.GetComponentInChildren<TriggerChild> ();		
-		}
+			shortcut = gameObject.GetComponentInChildren<TriggerChild> ();
+            coliderAtaque = childTrigger.GetComponent<Collider2D>();
+            coliderAtaque.enabled = false;
+    }
         private void Awake()
         {
             m_Character = GetComponent<Enemy>();
@@ -27,8 +34,9 @@ using UnityEngine.UI;
 
         private void FixedUpdate()
         {
-            
-            if (!die)
+        m_Animator.SetBool("Attacking", atacando);
+
+        if (!die)
             {         
               // Movimentation
                 if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Hit"))
@@ -56,12 +64,16 @@ using UnityEngine.UI;
         if (!ataque)
         {
             StopCoroutine("Attack");
+            atacando = false;
+            coliderAtaque.enabled = false; ;
         }
     }
     private IEnumerator Attack  (float time)
     {
-        yield return new WaitForSeconds(time);
-        m_Character.HandleAttack();
+        yield return new WaitForSeconds(time);       
+        coliderAtaque.enabled = true;
+        atackTimer = atackCD;
+        atacando = true;
         ataque = false; 
     }
 

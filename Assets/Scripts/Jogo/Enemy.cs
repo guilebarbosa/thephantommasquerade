@@ -119,8 +119,5 @@ public class Enemy : MonoBehaviour {
         m_Anim.SetTrigger("Hit");
     }
 
-    public void HandleAttack()
-    {
-        m_Anim.SetTrigger("Attacking");
-    }
+    
 }
