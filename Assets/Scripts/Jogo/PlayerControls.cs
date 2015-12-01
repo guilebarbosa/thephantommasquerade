@@ -13,17 +13,21 @@ public class PlayerControls : MonoBehaviour
     private bool        die;                // True -> die; False -> Live 
 
     public Slider       healthSlider;       // Object Slider
-    public string       gameOverSceneName;
-    private GameObject childTrigger;
-    private Collider2D coliderAtaque;
-    private bool atacando = false;
-    private float atackCD = 0.3f;
-    private float atackTimer = 0f;
+    public string       gameOverSceneName;  // Scene Load after game over
+
+    //?
+    private GameObject  childTrigger;
+    private Collider2D  coliderAtaque;
+    private bool        atacando;
+    private float       atackCD = 0.3f;
+    private float       atackTimer = 0f;
 
     private void Awake()
     {
         m_Character = GetComponent<Player>();
         m_Animator = GetComponent<Animator>();
+
+        //?
         childTrigger = transform.FindChild("AtackTrigger").gameObject;
         coliderAtaque = childTrigger.GetComponent<Collider2D>();
         coliderAtaque.enabled = false;
@@ -37,11 +41,9 @@ public class PlayerControls : MonoBehaviour
             // Attack
             if (Input.GetButtonDown("Fire1"))
             {
-
                 coliderAtaque.enabled = true;
                 atackTimer = atackCD;
                 atacando = true;
-              
             }
             else
             {
@@ -64,12 +66,12 @@ public class PlayerControls : MonoBehaviour
             StartCoroutine(GameOver(gameOverSceneName, 1));
         }
     }
-    
-    private void  takingHITS(int dmg)
+
+    private void takingHITS(int dmg)
     {
         Debug.Log("tomando porrada");
-        health -= dmg;   
-        m_Character.HandleHit();        
+        health -= dmg;
+        m_Character.HandleHit();
     }
 
     private void ChangeHealthStats()
@@ -78,12 +80,12 @@ public class PlayerControls : MonoBehaviour
 
         if (health <= 0)
         {
-            health  = 0;
-            die     = true;
+            health = 0;
+            die = true;
             m_Animator.SetTrigger("Dead");
         }
     }
-    
+
     private IEnumerator GameOver(string levelName, float time)
     {
         if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Die"))
