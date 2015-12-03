@@ -24,12 +24,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 460684}
   - 61: {fileID: 6102772}
-<<<<<<< HEAD
-  - 114: {fileID: 11491844}
   - 114: {fileID: 11451318}
-=======
   - 114: {fileID: 11400920}
->>>>>>> origin/master
   m_Layer: 0
   m_Name: AtackTrigger
   m_TagString: Untagged

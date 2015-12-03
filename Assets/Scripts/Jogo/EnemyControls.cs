@@ -4,18 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyControls : MonoBehaviour
 {
-    public bool         ataque;
-    public bool         InAtaque;
-    public Vector2      moveDirection;
-    public TriggerChild shortcut;
-    public GameObject   childTrigger;
+    public bool             ataque;
+    public Vector2          moveDirection;
+    public GameObject       childTrigger;
 
-    private Collider2D  coliderAtaque;
-    private Enemy       m_Character;        // Script Enemy.cs
-    private Animator    m_Animator;         // Componente Animator    
-    private bool        die;                // True -> die; False -> Live 
-    private int         currentHealth = 10;
-    private bool        playerIsDeath;
+    private Collider2D      coliderAtaque;
+    private Enemy           m_Character;        // Script Enemy.cs
+    private Animator        m_Animator;         // Componente Animator    
+    private bool            die;                // True -> die; False -> Live 
+    private int             currentHealth = 10;
+    private bool            playerIsDeath;
+    private TriggerChild    shortcut;
 
     void Start()
     {

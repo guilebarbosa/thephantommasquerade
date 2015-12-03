@@ -12,12 +12,17 @@ public class Player : MonoBehaviour
     private LayerMask m_LimitBottom;        // A mask determining what is ground to the character
 
     [SerializeField]
-    private LayerMask m_LimitX;             // A mask determining what is left and right limit to the character
+    private LayerMask m_LimitLeft;          // A mask determining what is left and right limit to the character
+
+    [SerializeField]
+    private LayerMask m_LimitRight;          // A mask determining what is left and right limit to the character
 
     private Transform m_GroundCheck;        // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .3f;     // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;                // Whether or not the player is grounded.
     private bool m_AtMaxHeight;			    // Whether or not the player has hit the ceiling;
+    private bool m_DistMaxLeft;
+    private bool m_DistMaxRight;
     const float k_CeilingRadius = .01f;     // Radius of the overlap circle to determine if the player can stand up
 
     private Animator m_Anim;                // Reference to the player animator component.
@@ -38,8 +43,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Grounded = false;
-        m_AtMaxHeight = false;
+        m_Grounded = 
+        m_AtMaxHeight = 
+        m_DistMaxLeft = 
+        m_DistMaxRight = false;
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -58,7 +65,24 @@ public class Player : MonoBehaviour
                 m_AtMaxHeight = true;
             }
         }
-        
+
+        Collider2D[] leftColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_LimitLeft);
+        for (int i = 0; i < leftColliders.Length; i++)
+        {
+            if (leftColliders[i].gameObject != gameObject)
+            {
+                m_DistMaxLeft = true;
+            }
+        }
+
+        Collider2D[] rightColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_LimitRight);
+        for (int i = 0; i < rightColliders.Length; i++)
+        {
+            if (rightColliders[i].gameObject != gameObject)
+            {
+                m_DistMaxRight = true;
+            }
+        }
     }
     
     public void HandleHit(){
@@ -73,17 +97,24 @@ public class Player : MonoBehaviour
             moveY = 0;
             moveSpeed = moveX;
         };
-        
+
+        if (moveX > 0 && m_DistMaxRight || moveX < 0 && m_DistMaxLeft) {
+            moveX = 0;
+            moveSpeed = moveY;
+        }
+
         // The Speed animator parameter is set to the absolute value of the horizontal input.
         m_Anim.SetFloat("Speed", Mathf.Abs(moveSpeed));
 
         // Move the character
         m_Rigidbody2D.velocity = new Vector2(moveX * m_MaxSpeed, moveY * m_MaxSpeed);
         
-        if (moveX > 0 && !m_FacingRight){
+        if (moveX > 0 && !m_FacingRight)
+        {
             Flip();
         }
-        else if (moveX < 0 && m_FacingRight){
+        else if (moveX < 0 && m_FacingRight)
+        {
             Flip();
         }
 

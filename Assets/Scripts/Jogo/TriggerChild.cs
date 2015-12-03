@@ -32,7 +32,6 @@ public class TriggerChild : MonoBehaviour
         if (col.gameObject == player)
         {
             isPlayerOnSight = false;
-            Debug.Log("saiu");
         }
     }
 

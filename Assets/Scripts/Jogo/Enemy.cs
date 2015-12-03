@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField]
     private float       m_MaxSpeed = 10f;       // The fastest the player can travel in the x axis.
     private Animator    m_Anim;                 // Reference to the player animator component.
     private Rigidbody2D m_Rigidbody2D;          // Reference to the player Rigidbody component.
