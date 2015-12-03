@@ -19,8 +19,6 @@ public class PlayerControls : MonoBehaviour
     private GameObject  childTrigger;
     private Collider2D  coliderAtaque;
     private bool        atacando;
-    private float       atackCD = 0.3f;
-    private float       atackTimer = 0f;
 
     private void Awake()
     {
@@ -42,7 +40,6 @@ public class PlayerControls : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 coliderAtaque.enabled = true;
-                atackTimer = atackCD;
                 atacando = true;
             }
             else
@@ -69,7 +66,6 @@ public class PlayerControls : MonoBehaviour
 
     private void takingHITS(int dmg)
     {
-        Debug.Log("tomando porrada");
         health -= dmg;
         m_Character.HandleHit();
     }
