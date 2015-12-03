@@ -48,6 +48,7 @@ GameObject:
   - 114: {fileID: 11404882}
   - 114: {fileID: 11478310}
   - 50: {fileID: 5088134}
+  - 82: {fileID: 8200620}
   m_Layer: 8
   m_Name: Woman
   m_TagString: Player
@@ -63,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 152262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .75999999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.14999998, y: 2.82500076, z: 1}
   m_Children: []
   m_Father: {fileID: 477654}
   m_RootOrder: 1
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.3512154, y: 0, z: 0}
+  m_LocalPosition: {x: -25.9899998, y: -1.05999994, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 495718}
@@ -143,11 +144,80 @@ BoxCollider2D:
   m_GameObject: {fileID: 187990}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
   m_Offset: {x: 0, y: .159999996}
   serializedVersion: 2
   m_Size: {x: .400000006, y: 2.0999999}
+--- !u!82 &8200620
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187990}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9563540
 Animator:
   serializedVersion: 3
@@ -195,9 +265,12 @@ MonoBehaviour:
   m_LimitBottom:
     serializedVersion: 2
     m_Bits: 1024
-  m_LimitX:
+  m_LimitLeft:
     serializedVersion: 2
     m_Bits: 2048
+  m_LimitRight:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!114 &11451318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,8 +294,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996056def70804571b223ae4d8c518cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  die: 0
   healthSlider: {fileID: 0}
   gameOverSceneName: GameOver
+  audioClips:
+  - {fileID: 8300000, guid: e7386856c2bbe4fa98cc8ca59aa775fb, type: 3}
+  - {fileID: 8300000, guid: 2d42ebf8462de4c6bb86f5bd09b3a7ad, type: 3}
+  - {fileID: 8300000, guid: f31e75454ba974150a9984e5fd179845, type: 3}
+  - {fileID: 8300000, guid: cdf6f70dae750475b9d939217404bde2, type: 3}
 --- !u!212 &21249956
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -246,7 +325,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300046, guid: 9b6e2dd4be796834da13dae220d44795, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -255,7 +334,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: audioClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e7386856c2bbe4fa98cc8ca59aa775fb, type: 3}
+    - target: {fileID: 0}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d42ebf8462de4c6bb86f5bd09b3a7ad, type: 3}
+    - target: {fileID: 0}
+      propertyPath: audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f31e75454ba974150a9984e5fd179845, type: 3}
+    - target: {fileID: 0}
+      propertyPath: audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: cdf6f70dae750475b9d939217404bde2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187990}

@@ -16,17 +16,21 @@ public class EnemyControls : MonoBehaviour
     private bool            playerIsDeath;
     private TriggerChild    shortcut;
 
+	public AudioClip[]		audioClips;
+	private AudioSource		audioSource;
+
     void Start()
     {
         shortcut = gameObject.GetComponentInChildren<TriggerChild>();
         coliderAtaque = childTrigger.GetComponent<Collider2D>();
-        coliderAtaque.enabled = false;
+		coliderAtaque.enabled = false;
     }
 
     private void Awake()
     {
-        m_Character = GetComponent<Enemy>();
-        m_Animator = GetComponent<Animator>();
+        m_Character = GetComponent<Enemy> ();
+        m_Animator = GetComponent<Animator> ();
+		audioSource = GetComponent<AudioSource> ();
         ataque = false;
     }
 
@@ -66,6 +70,7 @@ public class EnemyControls : MonoBehaviour
         {
             coliderAtaque.enabled = true;
             m_Animator.SetTrigger("Attacking");
+			PlaySound (0);
         }
 
         ataque = false;
@@ -78,13 +83,15 @@ public class EnemyControls : MonoBehaviour
             if (!die) {
                 currentHealth = 0;
                 die = true;
-                m_Animator.SetTrigger("Dead");
-                StartCoroutine(removeObject(.5f));
+				m_Animator.SetTrigger("Dead");
+
+                StartCoroutine(removeObject(0.5f));
             }
         }
         else {
             currentHealth -= dmg;
             m_Character.HandleHit();
+			PlaySound (1);
         }
     }
 
@@ -92,6 +99,8 @@ public class EnemyControls : MonoBehaviour
     {
         if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Die"))
         {
+			PlaySound(2);
+
             //Delay
             yield return new WaitForSeconds(time);
 
@@ -99,5 +108,10 @@ public class EnemyControls : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+	private void PlaySound(int index) {
+		audioSource.clip = audioClips [index];
+		audioSource.Play ();
+	}
 }
 
