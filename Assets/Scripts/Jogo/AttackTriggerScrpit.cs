@@ -11,4 +11,5 @@ public class AttackTriggerScrpit : MonoBehaviour {
             col.SendMessageUpwards("takingHITS", dmg);
         }
     }
+
 }

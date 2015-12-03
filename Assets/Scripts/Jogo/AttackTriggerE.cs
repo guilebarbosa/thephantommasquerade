@@ -11,4 +11,5 @@ public class AttackTriggerE : MonoBehaviour {
             col.SendMessageUpwards("takingHITS", dmg);
         }
     }
+ 
 }
