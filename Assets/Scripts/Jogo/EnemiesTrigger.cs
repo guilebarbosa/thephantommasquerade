@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
-
-public class EnemiesTrigger : MonoBehaviour {
+public class EnemiesTrigger : MonoBehaviour
+{
     public GameObject EnemyPrefab;
+<<<<<<< HEAD
     
     
 
@@ -31,4 +31,14 @@ public class EnemiesTrigger : MonoBehaviour {
         Destroy(this.gameObject);
     }
     
+=======
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        //Instantiate(EnemyPrefab, transform.position + (transform.right * 10), Quaternion.identity);
+        Debug.Log("Enemies spawned");
+        Destroy(this.gameObject);
+    }
+
+>>>>>>> origin/master
 }

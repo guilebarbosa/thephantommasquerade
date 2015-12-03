@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: e0f26b68389e2d1448b4b143eabaff17
+timeCreated: 1449105559
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: NinjaSprite_0
+    21300002: NinjaSprite_1
+    21300004: NinjaSprite_2
+    21300006: NinjaSprite_3
+    21300008: NinjaSprite_4
+    21300010: NinjaSprite_5
+    21300012: NinjaSprite_6
+    21300014: NinjaSprite_7
+    21300016: NinjaSprite_8
+    21300018: NinjaSprite_9
+    21300020: NinjaSprite_10
+    21300022: NinjaSprite_11
+    21300024: NinjaSprite_12
+    21300026: NinjaSprite_13
+    21300028: NinjaSprite_14
+    21300030: NinjaSprite_15
+    21300032: NinjaSprite_16
+    21300034: NinjaSprite_17
+    21300036: NinjaSprite_18
+    21300038: NinjaSprite_19
+    21300040: NinjaSprite_20
+    21300042: NinjaSprite_21
+    21300044: NinjaSprite_22
+    21300046: NinjaSprite_23
+    21300048: NinjaSprite_24
+    21300050: NinjaSprite_25
+    21300052: NinjaSprite_26
+    21300054: NinjaSprite_27
+    21300056: NinjaSprite_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 120
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: NinjaSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_5
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_6
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_7
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_8
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_9
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_10
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_11
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 2160
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_15
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_16
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_17
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1440
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 720
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_21
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 720
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_22
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 720
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_23
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 720
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_25
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_26
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_27
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NinjaSprite_28
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 600
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

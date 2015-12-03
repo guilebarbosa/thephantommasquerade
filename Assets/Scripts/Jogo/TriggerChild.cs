@@ -1,55 +1,63 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class TriggerChild : MonoBehaviour {
-	public Vector2 moveDirection;
-	private GameObject player;    
-	public bool state;
-	public bool isPlayerOnSight;
-	// Use this for initialization
-	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");			
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		IsPlayerOnSight ();
-        
-	}
-	void OnTriggerEnter2D(Collider2D col){
-		if(col.gameObject == player){
-			isPlayerOnSight = true;
-			state=true;
-            Debug.Log("entrou");
-		}
-	}
-	void OnTriggerExit2D(Collider2D col){
-		if (col.gameObject == player) {
-			isPlayerOnSight = false;
+public class TriggerChild : MonoBehaviour
+{
+    public bool state;
+    public bool isPlayerOnSight;
+    public Vector2 moveDirection;
+
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void Update()
+    {
+        IsPlayerOnSight();
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject == player)
+        {
+            isPlayerOnSight = true;
+            state = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject == player)
+        {
+            isPlayerOnSight = false;
             Debug.Log("saiu");
         }
-	}
+    }
 
-	void OnTriggerStay2D(Collider2D col ) {
-		if(col.gameObject == player){
-			
-			if (Vector2.Distance(this.transform.position,player.transform.position)>1.5f){
-				state=true;
-                Debug.Log("state true");
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject == player)
+        {
+
+            if (Vector2.Distance(this.transform.position, player.transform.position) > 1.5f)
+            {
+                state = true;
             }
-          
-            if (Vector2.Distance(this.transform.position, player.transform.position) <1.5f) {
-                Debug.Log("state false");
-				state=false;
-			}
-		}		
-	}
-	void IsPlayerOnSight(){
-		if (isPlayerOnSight){ 
-			
-			moveDirection = player.transform.position - transform.position;
-            
-		
-		}
-	}
+
+            if (Vector2.Distance(this.transform.position, player.transform.position) < 1.5f)
+            {
+                state = false;
+            }
+        }
+    }
+
+    void IsPlayerOnSight()
+    {
+        if (isPlayerOnSight)
+        {
+            moveDirection = player.transform.position - transform.position;
+        }
+    }
 }
