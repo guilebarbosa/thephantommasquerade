@@ -10,15 +10,14 @@ public class PlayerControls : MonoBehaviour
     private Animator    m_Animator;         // Componente Animator
     private int         health = 10;        // Character Heath max
     private float       lifeBarSpeed = 10f; // Speed animator lifeBar
-    private bool        die;                // True -> die; False -> Live 
 
+    public bool         die;                // True -> die; False -> Live 
     public Slider       healthSlider;       // Object Slider
     public string       gameOverSceneName;  // Scene Load after game over
 
     //?
     private GameObject  childTrigger;
     private Collider2D  coliderAtaque;
-    private bool        atacando;
 
     private void Awake()
     {
@@ -33,18 +32,16 @@ public class PlayerControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Animator.SetBool("Attacking", atacando);
         if (!die)
         {
             // Attack
             if (Input.GetButtonDown("Fire1"))
             {
                 coliderAtaque.enabled = true;
-                atacando = true;
+                m_Animator.SetTrigger("Attacking");
             }
             else
             {
-                atacando = false;
                 coliderAtaque.enabled = false;
             }
 
@@ -57,11 +54,6 @@ public class PlayerControls : MonoBehaviour
             // Health Controller
             ChangeHealthStats();
         }
-        else
-        {
-            // Call to Game Over Scene
-            StartCoroutine(GameOver(gameOverSceneName, 1));
-        }
     }
 
     private void takingHITS(int dmg)
@@ -72,14 +64,16 @@ public class PlayerControls : MonoBehaviour
 
     private void ChangeHealthStats()
     {
-        healthSlider.value = Mathf.Lerp(healthSlider.value, health, lifeBarSpeed * Time.deltaTime);
-
-        if (health <= 0)
+        if (health <= 0 && !die)
         {
             health = 0;
             die = true;
             m_Animator.SetTrigger("Dead");
+
+            StartCoroutine(GameOver(gameOverSceneName, 1.5f));
         }
+
+        healthSlider.value = Mathf.Lerp(healthSlider.value, health, lifeBarSpeed * Time.deltaTime);
     }
 
     private IEnumerator GameOver(string levelName, float time)
@@ -88,7 +82,7 @@ public class PlayerControls : MonoBehaviour
         {
             //Delay
             yield return new WaitForSeconds(time);
-
+            
             //Change Scene
             Application.LoadLevel(levelName);
         }

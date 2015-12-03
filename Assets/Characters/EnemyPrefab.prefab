@@ -41,12 +41,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 441166}
   - 212: {fileID: 21297548}
-  - 95: {fileID: 9503716}
   - 50: {fileID: 5009556}
   - 61: {fileID: 6171370}
   - 58: {fileID: 5858176}
   - 114: {fileID: 11401828}
   - 114: {fileID: 11477958}
+  - 95: {fileID: 9554308}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Enemy
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .75999999, y: 0, z: 0}
+  m_LocalPosition: {x: .726000011, y: .31099999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441166}
@@ -148,7 +148,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -1.20000005}
+  m_Offset: {x: -.100000001, y: -.800000012}
   serializedVersion: 2
   m_Radius: .300000012
 --- !u!58 &5878174
@@ -174,9 +174,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .159999996}
+  m_Offset: {x: -.100000381, y: .319527864}
   serializedVersion: 2
-  m_Size: {x: .400000006, y: 2.0999999}
+  m_Size: {x: .399999976, y: 1.6459341}
 --- !u!61 &6180736
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -190,7 +190,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .400000006, y: 1}
---- !u!95 &9503716
+--- !u!95 &9554308
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -199,7 +199,7 @@ Animator:
   m_GameObject: {fileID: 160294}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86795004381e844269f9d69f8982e7f3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34e69002a71a8524ca63c8fc6f1be0ee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: 0
+  InAtaque: 0
   moveDirection: {x: 0, y: 0}
   shortcut: {fileID: 0}
   childTrigger: {fileID: 129020}
@@ -233,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bce635310a847b4dbb3b0ca2bbf26e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0}
   state: 0
   isPlayerOnSight: 0
+  moveDirection: {x: 0, y: 0}
 --- !u!114 &11437084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,15 +261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_LimitTop:
-    serializedVersion: 2
-    m_Bits: 512
-  m_LimitBottom:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_LimitX:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!212 &21297548
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -287,15 +279,13 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eb5b9aa028fd9a945b6d7ca8c3f44b6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0f26b68389e2d1448b4b143eabaff17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
